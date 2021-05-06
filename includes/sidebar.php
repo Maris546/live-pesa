@@ -1,7 +1,25 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
+<?php
+
+$base_url = "http://localhost/live-pesa/";
+$asset_url = $base_url."assets/";
+$upload_url = $base_url."uploads";
+$transaction = $base_url."transactions/";
+$request = $base_url."requests/";
+$agents = $base_url."agents/";
+$merchants= $base_url."merchants/";
+$normal_users = $base_url."normal users/";
+$mail = $base_url."mail/";
+$events = $base_url."events/";
+$history = $base_url."history/";
+$report = $base_url."report/";
+$staff = $base_url."staff/";
+$setting = $base_url."account setting/";
+?>
+
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+    <a href="index.php" class="brand-link">
+      <img src="<?php echo $asset_url; ?>key-img/livepesa-icon.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">LIVE-PESA</span>
     </a>
@@ -11,20 +29,25 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="<?php echo $asset_url; ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">John Magufuli</a>
         </div>
       </div>
-
       <!-- Sidebar Menu -->
+      <style>
+        i{
+          width:20px;
+          margin-right: 5px;
+        }
+      </style>
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item">
-            <a href="index.php" class="nav-link">
+            <a href="<?php echo $base_url; ?>" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Dashboard
@@ -32,501 +55,396 @@
               </p>
             </a>
           </li>
-
-          <li class="nav-item">
-            <a href="agent.php" class="nav-link">
-              <i class="nav-icon far fa-user"></i>
-              <p>
-                Agents
-                <!-- <span class="right badge badge-danger">New</span> -->
-              </p>
-            </a>
-          </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+            <i class="fas fa-money-check-alt"></i>
               <p>
-                Layout Options
+               Transactions
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="<?php echo $transaction;?>agent_deposit.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation</p>
+                  <p>Make agent deposit</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                <a href="<?php echo $transaction;?>float_transfer.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation + Sidebar</p>
+                  <p>Float transfer</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
+                <a href="<?php echo $transaction;?>withdraw_requests.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Boxed</p>
+                  <p>Agent withdraw requests</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                <a href="<?php echo $transaction;?>main_agent_withdraw.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Sidebar</p>
+                  <p>Main agent a withdraw</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-topnav.html" class="nav-link">
+                <a href="<?php echo $transaction;?>all.withdraw.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Navbar</p>
+                  <p>All withdraw</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-footer.html" class="nav-link">
+                <a href="<?php echo $transaction;?>all.deposits.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Footer</p>
+                  <p>All deposits</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
+                <a href="<?php echo $transaction;?>all.billpay.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Collapsed Sidebar</p>
+                  <p>All bill pays</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+            <i class="far fa-user"></i>
               <p>
-                Charts
-                <i class="right fas fa-angle-left"></i>
+               Request
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
+              <a href="<?php echo $request; ?>agent.request.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>ChartJS</p>
+                  <p>Agent requests</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
+                <a href="<?php echo $request; ?>merchant.request.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Flot</p>
+                  <p>Merchant requests</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/charts/inline.html" class="nav-link">
+                <a href="<?php echo $request; ?>approved.request.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inline</p>
+                  <p>Approved requests</p>
+                </a>
+                <a href="<?php echo $request; ?>suspended.request.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Suspended requests</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+            <i class="far fa-user"></i>
               <p>
-                UI Elements
+               Agents
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+              <a href="<?php echo $agents; ?>add.agent.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>General</p>
+                  <p>Add agents</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="<?php echo $agents; ?>update.agent.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Icons</p>
+                  <p>Update agents</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/buttons.html" class="nav-link">
+                <a href="<?php echo $agents; ?>agents.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Buttons</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/sliders.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Sliders</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/modals.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Modals & Alerts</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/navbar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Navbar & Tabs</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/timeline.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Timeline</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/ribbons.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ribbons</p>
+                  <p>All agents</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+            <i class="fas fa-store"></i>
               <p>
-                Forms
+               Merchants
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
+              <a href="<?php echo $merchants; ?>add.merchant.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>General Elements</p>
+                  <p>Add merchant</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/forms/advanced.html" class="nav-link">
+                <a href="<?php echo $merchants; ?>update.merchant.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Advanced Elements</p>
+                  <p>Update merchant</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/forms/editors.html" class="nav-link">
+                <a href="<?php echo $merchants; ?>all.merchants.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Editors</p>
+                  <p>All merchants</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/forms/validation.html" class="nav-link">
+                <a href="<?php echo $merchants; ?>active.merchants.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Validation</p>
+                  <p>Active merchants</p>
+                </a>
+                <a href="<?php echo $merchants; ?>banned.merchant.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Banned merchants</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+            <i class="fas fa-users"></i>
               <p>
-                Tables
+               Normal users
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href="<?php echo $normal_users;?>all.normal.users.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
+                  <p>All users</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="<?php echo $normal_users;?>active.users.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
+                  <p>Active users</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href="<?php echo $normal_users;?>inactive.users.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
+                  <p>Inactive users</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo $normal_users;?>blocked.users.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Blocked users</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-header">EXAMPLES</li>
-          <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
-              <i class="nav-icon fas fa-calendar-alt"></i>
-              <p>
-                Calendar
-                <span class="badge badge-info right">2</span>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-                Gallery
-              </p>
-            </a>
-          </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+            <i class="far fa-envelope-open"></i>
               <p>
-                Mailbox
+                Mail
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href="<?php echo $mail;?>new.message.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Compose a new mail</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo $mail;?>inbox.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inbox</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
+                <a href="<?php echo $mail;?>outbox.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Compose</p>
+                  <p>Outbox</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
+                <a href="<?php echo $mail;?>sent.mails.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Read</p>
+                  <p>Sent mail</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo $mail;?>marked.important.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Marked as important</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo $mail;?>trash.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Trash</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+            <i class="fas fa-calendar-week"></i>
               <p>
-                Pages
+                Events
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
+                <a href="<?php echo $events;?>new.event.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Invoice</p>
+                  <p>Create a new event</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="<?php echo $events;?>undone.evente.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Profile</p>
+                  <p>Undone events</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/e-commerce.html" class="nav-link">
+                <a href="<?php echo $events;?>complete.events.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>E-commerce</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/projects.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Projects</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/project-add.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Project Add</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/project-edit.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Project Edit</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/project-detail.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Project Detail</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/contacts.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Contacts</p>
+                  <p>Complete events</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-plus-square"></i>
+            <i class="fas fa-history"></i>
               <p>
-                Extras
+                History
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/login.html" class="nav-link">
+                <a href="<?php echo $history;?>deposit.history.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Login</p>
+                  <p>Deposits</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/register.html" class="nav-link">
+                <a href="<?php echo $history;?>withdraw.history.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Register</p>
+                  <p>Withdraw</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/forgot-password.html" class="nav-link">
+                <a href="<?php echo $history;?>billpay.history.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Forgot Password</p>
+                  <p>Bill pay</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/recover-password.html" class="nav-link">
+                <a href="<?php echo $history;?>balancecheck.history.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Recover Password</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/lockscreen.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Lockscreen</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/legacy-user-menu.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Legacy User Menu</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/language-menu.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Language Menu</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/404.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Error 404</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/500.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Error 500</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/pace.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pace</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/blank.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Blank Page</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="starter.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Starter Page</p>
+                  <p>Balance check</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-header">MISCELLANEOUS</li>
-          <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.0" class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
-              <p>Documentation</p>
-            </a>
-          </li>
-          <li class="nav-header">MULTI LEVEL EXAMPLE</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fas fa-circle nav-icon"></i>
-              <p>Level 1</p>
-            </a>
-          </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-circle"></i>
+            <i class="far fa-file-alt"></i>
               <p>
-                Level 1
-                <i class="right fas fa-angle-left"></i>
+                Report
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<?php echo $report;?>new.report.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Level 2</p>
+                  <p>Create a new report</p>
                 </a>
-              </li>
-              <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>
-                    Level 2
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-dot-circle nav-icon"></i>
-                      <p>Level 3</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-dot-circle nav-icon"></i>
-                      <p>Level 3</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-dot-circle nav-icon"></i>
-                      <p>Level 3</p>
-                    </a>
-                  </li>
-                </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<?php echo $report;?>incomplete.report.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Level 2</p>
+                  <p>Incomplete reports</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo $report;?>complete.report.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Complete reports</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo $report;?>received.report.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Received reports</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="fas fa-circle nav-icon"></i>
-              <p>Level 1</p>
+            <i class="fas fa-user-tie"></i>
+              <p>
+                Staff
+                <i class="fas fa-angle-left right"></i>
+              </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo $staff;?>new.staff.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add staff</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo $staff;?>customer.serv.staff.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Customer service</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo $staff;?>accountants.staff.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Accountants</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo $staff;?>users.admn.staff.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Users adiminstrators</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo $staff;?>transaction.admn.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Transaction adiminstrator</p>
+                </a>
+              </li>
+            </ul>
           </li>
-          <li class="nav-header">LABELS</li>
-          <li class="nav-item">
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">Important</p>
+            <i class="fas fa-cog"></i>
+              <p>
+                Account seting
+                <i class="fas fa-angle-left right"></i>
+              </p>
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-warning"></i>
-              <p>Warning</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-circle text-info"></i>
-              <p>Informational</p>
-            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo $setting;?>change.password.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Change password</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo $setting;?>change.lang.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Change language</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo $setting;?>logout.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Logout</p>
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>
