@@ -35,7 +35,6 @@ $setting = $base_url."account setting/";
           <a href="#" class="d-block">John Magufuli</a>
         </div>
       </div>
-
       <!-- Sidebar Menu -->
       <style>
         i{
