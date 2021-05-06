@@ -1,3 +1,14 @@
+<?php
+
+$base_url = "http://localhost/live-pesa/";
+$asset_url = $base_url."assets/";
+$upload_url = $base_url."uploads";
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +17,13 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>LIVE-PESA | ADMIN AREA</title>
-
+<link rel="shortcut icon" href="<?php echo $asset_url?>key-img/livepesa-icon.png" type="image/x-icon">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo $asset_url; ?>plugins/fontawesome-free/css/all.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="<?php echo $asset_url; ?>plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?php echo $asset_url; ?>dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
